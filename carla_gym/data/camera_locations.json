@@ -1,0 +1,14 @@
+{
+    "main_camera": {
+      "location": [-1050, -3150, 3080],
+      "rotation": [270, 90, 0]
+    },
+    "camera_1": {
+      "location": [-3970, -5030, 1080],
+      "rotation": [325, 45, 0]
+    },
+    "camera_2": {
+      "location": [1855, -1030, 1080],
+      "rotation": [325, 225, 0]
+    }
+}
