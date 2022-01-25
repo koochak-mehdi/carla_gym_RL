@@ -50,5 +50,5 @@ else
     cd ${REPO}
     ${GIT} add --all . >> ${LOG}
     ${GIT} commit -m "Automated commit on ${COMMIT_TIMESTAMP}" >> ${LOG}
-    ${GIT} push origin main >> ${LOG}
+    ${GIT} push origin feature_automated_simulation >> ${LOG}
 fi
