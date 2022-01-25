@@ -9,6 +9,9 @@ LOG="/home/${USER}/carla_auto_git_log/${DATELOG}_carla.log"
 # commands
 SCREEN=$(which screen)
 PGREP=$(which pgrep)
+ECHO=$(which echo)
+
+echo "start" >> ${LOG}
 
 # check if carla is running
 carla_output=$(${PGREP} CarlaUE4)
@@ -21,7 +24,7 @@ then
     then
         if [ ! -n "${carla_PIDS[0]}" ]
         then
-            echo "running carla ..." >> ${LOG}
+            ${ECHO} "running carla ..." >> ${LOG}
             ${SCREEN} -dm $carla_screen
             ${SCREEN} -S $carla_screen -X stuff '/Carla/CARLA_0.9.12/CarlaUE4.sh -RenderOffScreen\n'
 
@@ -33,12 +36,12 @@ then
 
             if [[ ${#carla_PIDS[@]} -le 1 ]]
             then
-                echo 'rebooting ...' >> ${LOG}
+                ${ECHO} 'rebooting ...' >> ${LOG}
                 #bash -c 'sudo reboot 0'
             fi
         fi
     fi
 else
-    echo "carla already is running ..." >> ${LOG}
+    ${ECHO} "carla already is running ..." >> ${LOG}
     break
 fi

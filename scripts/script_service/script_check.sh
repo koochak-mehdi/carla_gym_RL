@@ -13,7 +13,9 @@ SCREEN=$(which screen)
 PS=$(which ps)
 GREP=$(which grep)
 AWK=$(which awk)
+ECHO=$(which echo)
 
+echo "The date is task1: $(date)" >> ${LOG}
 
 # check if script is running
 script_output=$(${PS} -aux | ${GREP} '[f]irst_try_ddpg' | ${AWK} '{print $2}')
@@ -31,21 +33,21 @@ then
 
             if [ ! -n "${script_PIDS[0]}" ]
             then
-                echo "killing screen seesion ..." >> ${LOG}
+                ${ECHO} "killing screen seesion ..." >> ${LOG}
                 ${SCREEN} -S $script_screen -X quit
 
-                echo "running script ..." >> ${LOG}
+                ${ECHO} "running script ..." >> ${LOG}
                 ${SCREEN} -dm $script_screen
                 ${SCREEN} -S $script_screen -X stuff $'conda activate carla_env\n'
                 ${SCREEN} -S $script_screen -X stuff $"python $root_script/first_try_ddpg.py\n"
             fi
         fi
     else
-        echo "script is already running ..." >> ${LOG}
+        ${ECHO} "script is already running ..." >> ${LOG}
     fi
 
 else
-    echo "mode stop and git" >> ${LOG}
+    ${ECHO} "mode stop and git" >> ${LOG}
 
     # kill script screen
     ${SCREEN} -S $script_screen -X quit
