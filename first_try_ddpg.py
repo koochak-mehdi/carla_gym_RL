@@ -1,3 +1,4 @@
+from ntpath import join
 import pickle
 import gym
 import carla
@@ -9,23 +10,26 @@ from agent.agent_ddpg import AgentDDPG
 
 from rich import print
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+print('root_dir -- ', ROOT_DIR)
+
 def write_score_down(score):
-    score_file_path = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/score.txt'
+    score_file_path = os.path.join(ROOT_DIR, 'score.txt')
     with open(score_file_path, 'w') as sFile:
         sFile.write(str(score))
 
 def load_last_best_score():
-    score_file_path = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/score.txt'
+    score_file_path = os.path.join(ROOT_DIR, 'score.txt')
     with open(score_file_path, 'r') as sFile:
         return float(sFile.readline())
 
 def write_down_episode(episode):
-    episode_file_path = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/tmp/episode/episode.txt'
+    episode_file_path = os.path.join(ROOT_DIR, 'tmp/episode/episode.txt')
     with open(episode_file_path, 'w') as eFile:
         eFile.write(str(episode))
 
 def load_last_episode():
-    episode_file_path = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/tmp/episode/episode.txt'
+    episode_file_path = os.path.join(ROOT_DIR, 'tmp/episode/episode.txt')
     with open(episode_file_path, 'r') as eFile:
         return int(eFile.readline())
 
@@ -48,7 +52,7 @@ if __name__ == '__main__':
     env_args['sync']            = True
     env_args['dt']              = .01
     env_args['n_episodes']      = 10_000
-    env_args['data_path']       = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/carla_gym/data'
+    env_args['data_path']       = os.path.join(ROOT_DIR, 'carla_gym/data')
     env_args['slots_csv']       = 'slot_locations.csv'
     env_args['agent_csv']       = 'agent_locations.csv'
     env_args['agent_json']      = 'agent_loaction.json'
@@ -63,7 +67,7 @@ if __name__ == '__main__':
     env_args['T_episode']       = 2000
     env_args['sim_time']        = env_args['dt'] * env_args['n_episodes'] * env_args['T_episode']
     env_args['min_score']       = -100_000
-    env_args['tmp_path']      = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/tmp'
+    env_args['tmp_path']        = os.path.join(ROOT_DIR, 'tmp')
     env_args['d_max']           = 43.5
     env_args['w']               = 1.0
     env_args['verbose']         = True
@@ -83,7 +87,8 @@ if __name__ == '__main__':
         batch_size=64,
         fc1_dims=400,
         fc2_dims=300,
-        n_actions=n_actions
+        n_actions=n_actions,
+        tmp_path=os.path.join(ROOT_DIR, 'tmp')
     )
     
     # load Model

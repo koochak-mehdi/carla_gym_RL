@@ -1,4 +1,3 @@
-import random
 from agent.replay_buffer import ReplayBuffe
 from agent.ou_action_noise import OUActionNoise
 from model.actor_netwrk import ActorNetwork
@@ -11,7 +10,8 @@ import pylab, pickle, os
 
 class AgentDDPG:
     def __init__(self, env_name, lr_a, lr_c, in_dims, tau, n_actions, gamma=.99,
-                    max_size=10_000_000, fc1_dims=400, fc2_dims=300, batch_size=64):
+                    max_size=10_000_000, fc1_dims=400, fc2_dims=300, batch_size=64,
+                    tmp_path=None):
         self.env_name = env_name
         self.gamma = gamma
         self.tau = tau
@@ -19,8 +19,10 @@ class AgentDDPG:
         self.lr_a = lr_a
         self.lr_c = lr_c
 
-        self.tmp_path = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/tmp'
-
+        if tmp_path is None:
+            self.tmp_path = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/tmp'
+        else:
+            self.tmp_path = tmp_path
 
         self.epsilon_min    = .01
         self.epsilon        = 1.0
@@ -31,11 +33,11 @@ class AgentDDPG:
         self.memory = self.load_buffer(max_size, in_dims, n_actions)
         self.noise = OUActionNoise(mu=np.zeros(n_actions))
 
-        self.actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'actor')
-        self.target_actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'target_actor')
+        self.actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'actor', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
+        self.target_actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'target_actor', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
 
-        self.critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'critic')
-        self.target_critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'target_critic')
+        self.critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'critic', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
+        self.target_critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'target_critic', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
 
         self.update_network_parameters(tau=1)
 

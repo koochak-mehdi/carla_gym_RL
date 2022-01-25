@@ -9,7 +9,7 @@ from rich import print
 
 class ActorNetwork(nn.Module):
     def __init__(self, in_size, fc1_dims, fc2_dims, out_size, l_rate, name, 
-            chkpt_dir='/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/tmp/ddpg'):
+            chkpt_dir='../tmp/ddpg'):
         super(ActorNetwork, self).__init__()
         self.name = name
         self.checkpoint_dir = chkpt_dir
