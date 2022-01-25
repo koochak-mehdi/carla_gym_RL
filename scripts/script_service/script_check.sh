@@ -41,5 +41,14 @@ else
     screen -S $script_screen -X quit
 
     # do git thigs
-    # TODO
+    REPO='/Carla/CARLA_0.9.12/PythonAPI/my_scripts/carla_gym_RL'
+    COMMIT_TIMESTAMP=`date +'%Y-%m-%d %H:%M:%S'`
+    GIT=$(which git)
+    DATELOG=`date +'%Y-%m-%d-%H-%M-%S'`
+    LOG="/home/${USER}/carla_auto_git_log/${DATELOG}.log"
+
+    cd ${REPO}
+    ${GIT} add --all . >> ${LOG}
+    ${GIT} commit -m "Automated commit on ${COMMIT_TIMESTAMP}" >> ${LOG}
+    ${GIT} push origin main >> ${LOG}
 fi

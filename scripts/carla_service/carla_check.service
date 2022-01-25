@@ -1,0 +1,6 @@
+[Unit]
+Description=auto running carla
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /Carla/CARLA_0.9.12/PythonAPI/my_scripts/carla_gym_RL/scripts/carla_service/carla_check.sh

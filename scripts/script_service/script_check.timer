@@ -1,0 +1,12 @@
+[Unit]
+Description=auto running script
+After=script_check.service
+
+[Timer]
+Unit=script_check.service
+Persistent=true
+OnBootSec=120
+OnCalendar=*:*:00
+
+[Install]
+WantedBy=timers.target
