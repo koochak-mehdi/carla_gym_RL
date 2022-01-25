@@ -5,3 +5,8 @@ test.ipynb
 tmp/buffer/memory.pkl
 
 agent/__pycache__/
+carla_gym/__pycache__
+carla_gym/component/__pycache__
+carla_gym/envs/__pycache__
+carla_gym/parking_component/__pycache__
+model/__pycache__
