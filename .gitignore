@@ -1,6 +1,8 @@
 # all test stuff
 test_env.py
 test.ipynb
+test_script.py
+test_log.log
 
 tmp/buffer/memory.pkl
 
