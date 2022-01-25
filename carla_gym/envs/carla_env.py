@@ -202,9 +202,15 @@ class CarlaEnv(gym.Env):
         
         self.i, self.j = get_i_j(n)
 
-        screen = pygame.display.set_mode(
+        '''screen = pygame.display.set_mode(
             (w * self.i, h * self.j),
             pygame.HWSURFACE | pygame.DOUBLEBUF
+        )'''
+
+        pygame.init()
+
+        screen = pygame.display.set_mode(
+            (w * self.i, h * self.j)
         )
 
         for i in range(n):

@@ -6,6 +6,8 @@ counter=0
 DATELOG=`date +'%Y-%m-%d-%H-%M-%S'`
 LOG="/home/${USER}/carla_auto_git_log/${DATELOG}_carla.log"
 
+echo "The date is task1: $(date)" >> ${LOG}
+
 # commands
 SCREEN=$(which screen)
 PGREP=$(which pgrep)
