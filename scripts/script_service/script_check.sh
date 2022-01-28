@@ -3,7 +3,7 @@
 # variables
 mode=$1
 script_screen="script_screen"
-root_script="/Carla/CARLA_0.9.12/PythonAPI/my_scripts/carla_gym_RL/"
+root_script="/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL"
 DATELOG=`date +'%Y-%m-%d-%H-%M-%S'`
 LOG="/home/${USER}/Documents/Mehdi/carla_gym_RL/logs/${DATELOG}_script.log"
 
