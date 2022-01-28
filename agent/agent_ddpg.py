@@ -45,13 +45,15 @@ class AgentDDPG:
         self.plot_info_dict = self.init_plot_info()
     
     def load_buffer(self, max_size, in_dims, n_actions):
+        
         if os.path.isfile(os.path.join(self.tmp_path, 'buffer', 'memory.pkl')):
-            print('... loading buffer ...')
-            with open(os.path.join(self.tmp_path, 'buffer', 'memory.pkl'), 'rb') as memoryPkl:
-                return pickle.load(memoryPkl)
-        else:
-            print('... creating buffer ...')
-            return ReplayBuffe(max_size, in_dims, n_actions)
+            if os.path.getsize(os.path.join(self.tmp_path, 'buffer', 'memory.pkl')) > 0:
+                print('... loading buffer ...')
+                with open(os.path.join(self.tmp_path, 'buffer', 'memory.pkl'), 'rb') as memoryPkl:
+                    return pickle.load(memoryPkl)
+        
+        print('... creating buffer ...')
+        return ReplayBuffe(max_size, in_dims, n_actions)
 
     def init_plot_info(self):
         # load plot Info
@@ -195,7 +197,7 @@ class AgentDDPG:
         pylab.ylabel('score', fontsize=18)
 
         try:
-            pylab.savefig(f'{self.env_name}_ddpg_ac.png')
+            pylab.savefig(os.path.join(self.tmp_path, f'{self.env_name}_ddpg_ac.png'))
         except OSError as e:
             print(e)
         
