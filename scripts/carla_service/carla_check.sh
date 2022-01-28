@@ -4,7 +4,7 @@
 carla_screen="carla_screen"
 counter=0
 DATELOG=`date +'%Y-%m-%d-%H-%M-%S'`
-LOG="/home/${USER}/carla_auto_git_log/${DATELOG}_carla.log"
+LOG="/home/${USER}/Documents/Mehdi/carla_gym_RL/logs/${DATELOG}_carla.log"
 
 echo "The date is task1: $(date)" >> ${LOG}
 
