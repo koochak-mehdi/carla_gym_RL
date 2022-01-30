@@ -1,0 +1,8 @@
+[Unit]
+Description=auto git
+
+[Service]
+Type=simple
+ExecStart=/home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/auto_git/auto_git_test.sh
+User=mehdi
+RemainAfterExit=yes

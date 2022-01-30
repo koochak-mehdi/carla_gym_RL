@@ -26,7 +26,7 @@ class AgentDDPG:
 
         self.epsilon_min    = .01
         self.epsilon        = 1.0
-        self.epsilon_decay  = .0000005
+        self.epsilon_decay  = .00000005
         self.explore_probability = self.init_expl_prob()
 
         #self.memory = ReplayBuffe(max_size, in_dims, n_actions)

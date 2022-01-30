@@ -1,0 +1,12 @@
+[Unit]
+Description=auto git
+After=auto_git.service
+
+[Timer]
+Unit=auto_git.service
+Persistent=true
+OnBootSec=120
+OnCalendar=*:*/30:00
+
+[Install]
+WantedBy=timers.target

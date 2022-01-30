@@ -3,6 +3,6 @@ Description=auto running script
 
 [Service]
 Type=simple
-ExecStart=/Carla/CARLA_0.9.12/PythonAPI/my_scripts/carla_gym_RL/scripts/script_service/script_check.sh 1
+ExecStart=/home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/script_service/script_test.sh
 User=mehdi
 RemainAfterExit=yes

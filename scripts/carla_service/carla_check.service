@@ -3,6 +3,6 @@ Description=auto running carla
 
 [Service]
 Type=simple
-ExecStart=/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/scripts/carla_service/carla_check.sh
+ExecStart=/home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/carla_service/carla_test.sh
 User=mehdi
 RemainAfterExit=yes
