@@ -1,0 +1,5 @@
+[feature_automated_simulation 5eef21d] Automated commit on 2022-01-30 17:31:19
+ 9 files changed, 35 insertions(+), 7 deletions(-)
+ create mode 100644 logs/git_logs/2022-01-30-17-31-19.log
+ create mode 100644 vars/carla_run_var
+ create mode 100644 vars/test_var
