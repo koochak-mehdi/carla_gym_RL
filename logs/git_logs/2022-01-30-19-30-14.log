@@ -1,0 +1,5 @@
+[feature_automated_simulation 559be78] Automated commit on 2022-01-30 19:30:14
+ 9 files changed, 10 insertions(+), 4 deletions(-)
+ create mode 100644 logs/git_logs/2022-01-30-19-30-14.log
+ rewrite tmp/carla-env-v0_ddpg_ac.png (99%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
