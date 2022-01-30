@@ -1,0 +1,9 @@
+total 32
+drwxrwxr-x 2 mehdi mehdi 4096 Jan 29 15:38 .
+drwxrwxr-x 5 mehdi mehdi 4096 Jan 30 14:06 ..
+-rw-rw-r-- 1 mehdi mehdi  181 Jan 30 15:01 script_check.service
+-rwxrwxr-x 1 mehdi mehdi 1718 Jan 29 13:56 script_check.sh
+-rw-rw-r-- 1 mehdi mehdi  182 Jan 29 13:56 script_check.timer
+-rwxrwxr-x 1 mehdi mehdi  328 Jan 30 14:05 script_run.sh
+-rwxrwxr-x 1 mehdi mehdi  490 Jan 30 14:45 script_test.sh
+-rwxrwxr-x 1 mehdi mehdi  257 Jan 30 17:25 test.sh
