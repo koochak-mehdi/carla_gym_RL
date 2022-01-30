@@ -1,0 +1,31 @@
+[feature_automated_simulation 1cccac9] Automated commit on 2022-01-30 15:09:18
+ 62 files changed, 270 insertions(+), 14 deletions(-)
+ create mode 100644 logs/carla_logs/2022-01-29-15-10-00_test.log
+ create mode 100644 logs/carla_logs/2022-01-29-15-15-00_test.log
+ create mode 100644 logs/carla_logs/2022-01-29-15-20-08_test.log
+ create mode 100644 logs/carla_logs/2022-01-29-15-25-00_test.log
+ create mode 100644 logs/git_logs/2022-01-30-15-09-18.log
+ create mode 100644 logs/script_logs/2022-01-29-15-34-48_test.log
+ create mode 100644 logs/script_logs/2022-01-29-15-35-12_test.log
+ create mode 100644 logs/script_logs/2022-01-29-15-38-03_test.log
+ create mode 100644 logs/script_logs/2022-01-29-15-39-43_test.log
+ create mode 100644 logs/script_logs/2022-01-29-15-40-21_test.log
+ create mode 100644 logs/script_logs/2022-01-29-15-50-39_test.log
+ create mode 100644 logs/script_logs/2022-01-29-15-51-32_test.log
+ create mode 100644 logs/script_logs/2022-01-29-15-51-57_test.log
+ create mode 100644 scripts/auto_git/auto_git.service
+ create mode 100644 scripts/auto_git/auto_git.timer
+ create mode 100755 scripts/auto_git/auto_git_run.sh
+ create mode 100755 scripts/auto_git/auto_git_test.sh
+ create mode 100755 scripts/carla_service/carla_run.sh
+ create mode 100755 scripts/carla_service/carla_test.sh
+ create mode 100755 scripts/carla_service/test.sh
+ create mode 100755 scripts/script_service/script_run.sh
+ create mode 100755 scripts/script_service/script_test.sh
+ rewrite scripts/script_service/test.sh (91%)
+ create mode 100644 scripts/test.py
+ rewrite tmp/carla-env-v0_ddpg_ac.png (98%)
+ rewrite tmp/ddpg/actor_ddpg.pth (93%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
+ create mode 100644 vars/var_script_log
+ create mode 100644 vars/varlog_carla
