@@ -13,7 +13,7 @@ ${GIT} add --all . >> ${LOG}
 ${GIT} commit -m "Automated commit on ${COMMIT_TIMESTAMP}" >> ${LOG}
 ${GIT} push origin test_learing >> ${LOG}
 
-if[[ ${UPDATE_FLAG} -eq 1 ]]
+if [[ ${UPDATE_FLAG} -eq 1 ]]
 then
     ${BASH} /home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/update/update.sh
 fi
