@@ -14,7 +14,7 @@ ${GIT} push origin test_learing >> ${LOG}
 
 if[[ ${UPDATE_FLAG} -eq 1 ]]
 then
-    /home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/update/update.sh
+    ./home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/update/update.sh
 fi
 
 sudo systemctl stop auto_git.service
