@@ -11,7 +11,7 @@ from carla_gym.component.others import *
 from carla_gym.parking_component.slot_visualizer import SlotVisualizer
 from carla_gym.parking_component.bb_visualizer import BbVisualizer
 
-from rich import print
+#rom rich import print
 
 class ParkingWorld:
     def __init__(self, args):

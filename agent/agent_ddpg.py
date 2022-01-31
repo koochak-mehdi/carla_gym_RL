@@ -1,3 +1,4 @@
+from time import sleep
 from agent.replay_buffer import ReplayBuffe
 from agent.ou_action_noise import OUActionNoise
 from model.actor_netwrk import ActorNetwork
@@ -11,13 +12,14 @@ import pylab, pickle, os
 class AgentDDPG:
     def __init__(self, env_name, lr_a, lr_c, in_dims, tau, n_actions, gamma=.99,
                     max_size=10_000_000, fc1_dims=400, fc2_dims=300, batch_size=64,
-                    tmp_path=None):
+                    tmp_path=None, logger=None):
         self.env_name = env_name
         self.gamma = gamma
         self.tau = tau
         self.batch_size = batch_size
         self.lr_a = lr_a
         self.lr_c = lr_c
+        self.logger = logger
 
         if tmp_path is None:
             self.tmp_path = '/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/tmp'
@@ -33,11 +35,11 @@ class AgentDDPG:
         self.memory = self.load_buffer(max_size, in_dims, n_actions)
         self.noise = OUActionNoise(mu=np.zeros(n_actions))
 
-        self.actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'actor', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
-        self.target_actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'target_actor', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
+        self.actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'actor', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'), logger=self.logger)
+        self.target_actor = ActorNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_a, 'target_actor', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'), logger=self.logger)
 
-        self.critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'critic', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
-        self.target_critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'target_critic', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'))
+        self.critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'critic', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'), logger=self.logger)
+        self.target_critic = CriticNetwork(in_dims, fc1_dims, fc2_dims, n_actions, lr_c, 'target_critic', chkpt_dir=os.path.join(self.tmp_path, 'ddpg'), logger=self.logger)
 
         self.update_network_parameters(tau=1)
 
@@ -48,26 +50,36 @@ class AgentDDPG:
         
         if os.path.isfile(os.path.join(self.tmp_path, 'buffer', 'memory.pkl')):
             if os.path.getsize(os.path.join(self.tmp_path, 'buffer', 'memory.pkl')) > 0:
-                print('... loading buffer ...')
+                msg = '... loading buffer ...'
+                print(msg)
+                self.logger.info(msg)
+
                 with open(os.path.join(self.tmp_path, 'buffer', 'memory.pkl'), 'rb') as memoryPkl:
                     return pickle.load(memoryPkl)
-        
-        print('... creating buffer ...')
+        msg = '... creating buffer ...'
+        print(msg)
+        self.logger.info(msg)
         return ReplayBuffe(max_size, in_dims, n_actions)
 
     def init_plot_info(self):
         # load plot Info
         plot_pkl_path = os.path.join(self.tmp_path, 'plot_info', 'plotInfo.pkl')
         if os.path.exists(plot_pkl_path):
-            print('... loading plot info ...')
+            msg = '... loading plot info ...'
+            print(msg)
+            self.logger.info(msg)
             with open(plot_pkl_path, 'rb') as pltInfoPklFile:
                 return pickle.load(pltInfoPklFile)
         else:
-            print('... creating plot info ...')
+            msg = '... creating plot info ...'
+            print(msg)
+            self.logger.info(msg)
             return {'scores': list(), 'episodes': list(), 'average': list()}
 
     def save_buffer(self):
-        print('... saving memory buffer ...')
+        msg = '... saving memory buffer ...'
+        print(msg)
+        self.logger.info(msg)
         with open(os.path.join(self.tmp_path, 'buffer', 'memory.pkl'), 'wb') as memoryPkl:
             pickle.dump(self.memory, memoryPkl)     
 
@@ -75,7 +87,9 @@ class AgentDDPG:
         expl_prob_path = os.path.join(self.tmp_path, 'expl_prob', 'expl_prob.txt')
         if os.path.exists(expl_prob_path):
             with open(expl_prob_path, 'r') as explFile:
-                print('... loading explore probabilty ...')
+                msg = '... loading explore probabilty ...'
+                print(msg)
+                self.logger.info(msg)
                 return float(explFile.readline())
         else:
             return 0.0
@@ -83,7 +97,9 @@ class AgentDDPG:
     def save_expl_prob(self, expl_prob):
         expl_prob_path = os.path.join(self.tmp_path, 'expl_prob', 'expl_prob.txt')
         with open(expl_prob_path, 'w') as explFile:
-            print('... saving explore probability ...')
+            msg = '... saving explore probability ...'
+            print(msg)
+            self.logger.info(msg)
             explFile.write(str(expl_prob))
 
     def choose_action(self, observation, decay_step):
@@ -204,7 +220,9 @@ class AgentDDPG:
         return str(self.plot_info_dict['average'][-1])
     
     def save_plot_info(self):
-        print('... saving plot info ...')
+        msg = '... saving plot info ...'
+        print(msg)
+        self.logger.info(msg)
         with open(os.path.join(self.tmp_path, 'plot_info', 'plotInfo.pkl'), 'wb') as pltIinfoPklFile:
             pickle.dump(self.plot_info_dict, pltIinfoPklFile)
         

@@ -5,7 +5,7 @@ LOG="/home/${USER}/Documents/Mehdi/carla_gym_RL/logs/git_logs/${DATELOG}.log"
 SCREEN=$(which screen)
 AUTOGIT_SCREEN="autogit_screen"
 
-echo $LOG > /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/var_script_log
+echo $LOG > /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/autogit_log
 
 
 

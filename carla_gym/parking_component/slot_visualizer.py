@@ -3,7 +3,7 @@ import carla
 import pandas as pd
 import os, time
 
-from rich import print
+#from rich import print
 
 from carla_gym.component.others import *
 

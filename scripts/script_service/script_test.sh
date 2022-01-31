@@ -5,7 +5,7 @@ LOG="/home/${USER}/Documents/Mehdi/carla_gym_RL/logs/script_logs/${DATELOG}_test
 SCREEN=$(which screen)
 SCRIPT_SCREEN="script_screen"
 
-echo $LOG > /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/var_script_log
+echo $LOG > /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/script_log
 
 
 

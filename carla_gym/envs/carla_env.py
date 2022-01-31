@@ -14,7 +14,7 @@ from carla_gym.component.world import World
 
 
 
-from rich import print
+#from rich import print
 
 from carla_gym.parking_component.parking_world import ParkingWorld
 

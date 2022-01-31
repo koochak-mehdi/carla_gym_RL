@@ -1,3 +1,4 @@
+from sklearn.feature_selection import SelectKBest
 import torch as t
 import torch.nn as nn
 import torch.nn.functional as F
@@ -5,16 +6,17 @@ import torch.optim as optim
 
 import numpy as np
 import os
-from rich import print
+#from rich import print
 
 class ActorNetwork(nn.Module):
     def __init__(self, in_size, fc1_dims, fc2_dims, out_size, l_rate, name, 
-            chkpt_dir='../tmp/ddpg'):
+            chkpt_dir='../tmp/ddpg', logger=None):
         super(ActorNetwork, self).__init__()
         self.name = name
         self.checkpoint_dir = chkpt_dir
         self.checkpoint_file = os.path.join(chkpt_dir, name + '_ddpg.pth')
         self.checkpoint_file_best = os.path.join(chkpt_dir, name + '_best_ddpg.pth')
+        self.logger = logger
 
         self.fc1 = nn.Linear(in_size, fc1_dims)
         self.fc2 = nn.Linear(fc1_dims, fc2_dims)
@@ -61,17 +63,29 @@ class ActorNetwork(nn.Module):
         return x
 
     def save_checkpoint(self):
-        print('... saving checkout ...')
+        msg = '... saving checkout ...'
+        print(msg)
+        if self.logger:
+            self.logger.info(msg)
         t.save(self.state_dict(), self.checkpoint_file)
 
     def load_checkpoint(self):
-        print('... loading checkpoint ...')
+        msg = '... loading checkpoint ...'
+        print(msg)
+        if self.logger:
+            self.logger.info(msg)
         self.load_state_dict(t.load(self.checkpoint_file))
 
     def save_best(self):
-        print('... saving best checkpoint ...')
+        msg = '... saving best checkpoint ...'
+        print(msg)
+        if self.logger:
+            self.logger.info(msg)
         t.save(self.state_dict, self.checkpoint_file_best)
     
     def load_best(self):
-        print('... loading best checkpoint ...')
+        msg = '... loading best checkpoint ...'
+        print(msg)
+        if self.logger:
+            self.logger.info(msg)
         self.load_state_dict(t.load(self.checkpoint_file_best))

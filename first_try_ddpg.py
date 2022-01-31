@@ -1,17 +1,29 @@
-from ntpath import join
 import pickle
 import gym
 import carla
 import carla_gym
-import numpy
+import logging
+from time import gmtime, strftime
 import os
 
 from agent.agent_ddpg import AgentDDPG
 
-from rich import print
+#from rich import print
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 print('root_dir -- ', ROOT_DIR)
+
+date = strftime("%Y-%m-%d_%H-%M-%S", gmtime())
+log_dir = os.path.join(ROOT_DIR, 'logs', 'simulations')
+if not os.path.exists(log_dir):
+    os.mkdir(log_dir)
+
+log_file = os.path.join(log_dir, date + '.log')
+logging.basicConfig(level=logging.DEBUG,
+                    filename=log_file,
+                    filemode='w',
+                    format='%(message)s')
+logger = logging.getLogger(__name__)
 
 def write_score_down(score):
     score_file_path = os.path.join(ROOT_DIR, 'score.txt')
@@ -88,7 +100,8 @@ if __name__ == '__main__':
         fc1_dims=400,
         fc2_dims=300,
         n_actions=n_actions,
-        tmp_path=os.path.join(ROOT_DIR, 'tmp')
+        tmp_path=os.path.join(ROOT_DIR, 'tmp'),
+        logger=logger
     )
     
     # load Model
@@ -120,7 +133,9 @@ if __name__ == '__main__':
     best_score = load_last_best_score()
     #for e in range(env_args['n_episodes']):
     while e < env_args['n_episodes']:
-        print('-'*25, f' {e+1} ', '-'*25)
+        title = '-'*25+ f' {e+1} '+ '-'*25
+        logger.info(title)
+        print(title)
         current_state = env.reset()
         done = False
         score = 0
@@ -151,7 +166,9 @@ if __name__ == '__main__':
                 # save memory buffer
                 agent.save_buffer()
                 average = agent.plot_results(score, e)
-                print(f'episode: {e+1}/10000, score: {score}, average: {average}, ex-prob: {explore_prob}')
+                summery = f'episode: {e+1}/10000, score: {score}, average: {average}, ex-prob: {explore_prob}'
+                print(summery)
+                logger.info(summery)
                 
                 # save plot info lists
                 agent.save_plot_info()

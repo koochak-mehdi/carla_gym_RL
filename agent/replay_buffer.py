@@ -10,7 +10,6 @@ class ReplayBuffe(object):
         self.reward_memory = np.zeros(self.mem_size)
         self.new_state_memory = np.zeros((self.mem_size, in_shape))
         self.done_memory = np.zeros(self.mem_size, dtype=bool)
-        self.pickling_path = '/Carla/CARLA_0.9.12/PythonAPI/my_scripts/carla_scripts/carla_gym_custome_env/tmp/buffer'
 
     def store_transition(self, state, action, reward, state_, done):
         idx = self.mem_cntr % self.mem_size

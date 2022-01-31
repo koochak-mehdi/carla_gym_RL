@@ -1,4 +1,4 @@
-LOG=$(cat /home/mehdi/Documents/Mehdi/carla_gym_RL/vars/varlog_carla)
+LOG=$(cat /home/mehdi/Documents/Mehdi/carla_gym_RL/vars/carla_log)
 CARLA_SCREEN="carla_screen"
 SCREEN=$(which screen)
 REBOOT=$(which reboot)
