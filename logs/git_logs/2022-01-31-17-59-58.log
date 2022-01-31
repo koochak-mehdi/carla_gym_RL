@@ -1,0 +1,7 @@
+[test_learing f703936] Automated commit on 2022-01-31 17:59:58
+ 8 files changed, 8 insertions(+), 3 deletions(-)
+ create mode 100644 logs/git_logs/2022-01-31-17-59-58.log
+ create mode 100644 logs/simulations/2022-01-31_16-59-40.log
+ create mode 100644 vars/carla_log
+ create mode 100644 vars/carla_run_var
+####################### from update #############################

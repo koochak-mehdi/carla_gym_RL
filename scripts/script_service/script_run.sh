@@ -10,4 +10,4 @@ CONDA=$(which conda)
 ${PYTHON} /home/${USER}/Documents/Mehdi/carla_gym_RL/first_try_ddpg.py
 
 sudo systemctl stop script_check.service
-#${SCREEN} -S ${SCRIPT_SCREEN} -X quit
+${SCREEN} -S ${SCRIPT_SCREEN} -X quit
