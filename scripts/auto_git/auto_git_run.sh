@@ -7,6 +7,7 @@ LOG=$(cat /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/autogit_log)
 AUTOGIT_SCREEN="autogit_screen"
 UPDATE_FLAG=$(cat /home/mehdi/Documents/Mehdi/carla_gym_RL/vars/update_flag)
 BASH=$(which bash)
+SCREEN=$(which screen)
 
 cd ${REPO}
 ${GIT} add --all . >> ${LOG}
