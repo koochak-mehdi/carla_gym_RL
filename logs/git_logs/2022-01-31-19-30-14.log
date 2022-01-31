@@ -1,0 +1,9 @@
+[test_learing 3330e74] Automated commit on 2022-01-31 19:30:14
+ 14 files changed, 1798 insertions(+), 5 deletions(-)
+ create mode 100644 logs/git_logs/2022-01-31-19-30-14.log
+ create mode 100644 logs/simulations/2022-01-31_17-31-11.log
+ create mode 100644 logs/simulations/2022-01-31_17-45-58.log
+ rewrite tmp/carla-env-v0_ddpg_ac.png (99%)
+ rewrite tmp/ddpg/actor_ddpg.pth (92%)
+ rewrite tmp/ddpg/critic_ddpg.pth (93%)
+####################### from update #############################
