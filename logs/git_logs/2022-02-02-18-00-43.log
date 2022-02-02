@@ -1,1 +1,7 @@
 Fetching origin
+[ki 9a0754c] Automated commit from ki on 2022-02-02 18:00:43
+ 9 files changed, 14 insertions(+), 2 deletions(-)
+ create mode 100644 logs/git_logs/2022-02-02-18-00-43.log
+ rewrite tmp/carla-env-v0_ddpg_ac.png (98%)
+ rewrite tmp/ddpg/actor_ddpg.pth (92%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
