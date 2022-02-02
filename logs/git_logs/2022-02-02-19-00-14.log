@@ -1,1 +1,23 @@
 Fetching origin
+[ki 02797de] Automated commit from ki on 2022-02-02 19:00:15
+ 28 files changed, 6813 insertions(+), 5 deletions(-)
+ create mode 100644 logs/git_logs/2022-02-02-19-00-14.log
+ create mode 100644 logs/simulations/2022-02-02_17-32-17.log
+ create mode 100644 logs/simulations/2022-02-02_17-33-46.log
+ create mode 100644 logs/simulations/2022-02-02_17-36-57.log
+ create mode 100644 logs/simulations/2022-02-02_17-38-04.log
+ create mode 100644 logs/simulations/2022-02-02_17-40-07.log
+ create mode 100644 logs/simulations/2022-02-02_17-41-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-44-05.log
+ create mode 100644 logs/simulations/2022-02-02_17-45-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-47-10.log
+ create mode 100644 logs/simulations/2022-02-02_17-49-53.log
+ create mode 100644 logs/simulations/2022-02-02_17-50-05.log
+ create mode 100644 logs/simulations/2022-02-02_17-51-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-52-23.log
+ create mode 100644 logs/simulations/2022-02-02_17-55-52.log
+ create mode 100644 logs/simulations/2022-02-02_17-59-20.log
+ create mode 100644 logs/simulations/2022-02-02_18-00-15.log
+ rewrite tmp/carla-env-v0_ddpg_ac.png (98%)
+ rewrite tmp/ddpg/actor_ddpg.pth (92%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
