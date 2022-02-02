@@ -1,1 +1,10 @@
 Fetching origin
+[ki fb3f51a] Automated commit from ki on 2022-02-02 19:30:15
+ 15 files changed, 2183 insertions(+), 5 deletions(-)
+ create mode 100644 logs/git_logs/2022-02-02-19-30-14.log
+ create mode 100644 logs/simulations/2022-02-02_18-02-07.log
+ create mode 100644 logs/simulations/2022-02-02_18-03-20.log
+ create mode 100644 logs/simulations/2022-02-02_18-04-48.log
+ rewrite tmp/carla-env-v0_ddpg_ac.png (98%)
+ rewrite tmp/ddpg/actor_ddpg.pth (92%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
