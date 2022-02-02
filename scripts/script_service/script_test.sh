@@ -11,5 +11,5 @@ echo $LOG > /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/script_log
 
 ${SCREEN} -dm ${SCRIPT_SCREEN}
 ${SCREEN} -S ${SCRIPT_SCREEN} -X stuff $'conda activate carla_env\n'
-${SCREEN} -S ${SCRIPT_SCREEN} -X stuff $'/home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/script_service/script_run.sh\n'
+${SCREEN} -S ${SCRIPT_SCREEN} -X stuff $'/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/scripts/script_service/script_run.sh\n'
 

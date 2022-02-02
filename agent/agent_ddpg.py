@@ -80,6 +80,11 @@ class AgentDDPG:
         msg = '... saving memory buffer ...'
         print(msg)
         self.logger.info(msg)
+        if not os.path.exists(os.path.join(self.tmp_path, 'buffer')):
+            os.mkdir(os.path.join(self.tmp_path, 'buffer'))
+            msg = '... creating memory buffer directory ...'
+            print(msg)
+            self.logger.info(msg)
         with open(os.path.join(self.tmp_path, 'buffer', 'memory.pkl'), 'wb') as memoryPkl:
             pickle.dump(self.memory, memoryPkl)     
 

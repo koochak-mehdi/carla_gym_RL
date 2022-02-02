@@ -10,4 +10,4 @@ echo $LOG > /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/autogit_log
 
 
 ${SCREEN} -dm ${AUTOGIT_SCREEN}
-${SCREEN} -S ${AUTOGIT_SCREEN} -X stuff $'/home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/auto_git/auto_git_run.sh\n'
+${SCREEN} -S ${AUTOGIT_SCREEN} -X stuff $'/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/scripts/auto_git/auto_git_run.sh\n'

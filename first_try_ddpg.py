@@ -7,7 +7,6 @@ from time import gmtime, strftime
 import os
 
 from agent.agent_ddpg import AgentDDPG
-
 #from rich import print
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))

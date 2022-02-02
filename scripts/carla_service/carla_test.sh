@@ -8,4 +8,4 @@ CARLA_SCREEN="carla_screen"
 echo $LOG > /home/${USER}/Documents/Mehdi/carla_gym_RL/vars/carla_log
 
 ${SCREEN} -dm ${CARLA_SCREEN}
-${SCREEN} -S ${CARLA_SCREEN} -X stuff $'/home/mehdi/Documents/Mehdi/carla_gym_RL/scripts/carla_service/carla_run.sh\n'
+${SCREEN} -S ${CARLA_SCREEN} -X stuff $'/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/scripts/carla_service/carla_run.sh\n'
