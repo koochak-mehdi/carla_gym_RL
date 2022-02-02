@@ -1,0 +1,30 @@
+[ki 9cf2860] Automated commit from ki on 2022-02-02 15:30:38
+ 35 files changed, 9471 insertions(+), 4 deletions(-)
+ create mode 100644 logs/git_logs/2022-02-02-15-30-38.log
+ create mode 100644 logs/simulations/2022-02-02_13-31-28.log
+ create mode 100644 logs/simulations/2022-02-02_13-32-29.log
+ create mode 100644 logs/simulations/2022-02-02_13-37-26.log
+ create mode 100644 logs/simulations/2022-02-02_13-38-07.log
+ create mode 100644 logs/simulations/2022-02-02_13-47-39.log
+ create mode 100644 logs/simulations/2022-02-02_13-47-58.log
+ create mode 100644 logs/simulations/2022-02-02_13-50-03.log
+ create mode 100644 logs/simulations/2022-02-02_13-54-38.log
+ create mode 100644 logs/simulations/2022-02-02_13-55-53.log
+ create mode 100644 logs/simulations/2022-02-02_14-00-05.log
+ create mode 100644 logs/simulations/2022-02-02_14-01-05.log
+ create mode 100644 logs/simulations/2022-02-02_14-03-23.log
+ create mode 100644 logs/simulations/2022-02-02_14-04-10.log
+ create mode 100644 logs/simulations/2022-02-02_14-06-48.log
+ create mode 100644 logs/simulations/2022-02-02_14-11-48.log
+ create mode 100644 logs/simulations/2022-02-02_14-14-10.log
+ create mode 100644 logs/simulations/2022-02-02_14-17-36.log
+ create mode 100644 logs/simulations/2022-02-02_14-18-29.log
+ create mode 100644 logs/simulations/2022-02-02_14-19-32.log
+ create mode 100644 logs/simulations/2022-02-02_14-23-37.log
+ create mode 100644 logs/simulations/2022-02-02_14-26-44.log
+ create mode 100644 logs/simulations/2022-02-02_14-30-00.log
+ rewrite tmp/carla-env-v0_ddpg_ac.png (98%)
+ rewrite tmp/ddpg/actor_ddpg.pth (92%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
+ create mode 100644 vars/watchdog_var
+Fetching origin

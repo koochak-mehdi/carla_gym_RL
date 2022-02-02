@@ -1,0 +1,8 @@
+[Unit]
+Description=watching for script_check service
+
+[Service]
+Type=simple
+ExecStart=/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/scripts/watch_dog/watch_dog.sh
+User=omen_ki_rechner
+RemainAfterExit=yes

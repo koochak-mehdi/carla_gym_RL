@@ -1,0 +1,12 @@
+[Unit]
+Description=watching for script_check service
+After=my_watch_dog.service
+
+[Timer]
+Unit=my_watch_dog.service
+Persistent=true
+OnBootSec=120
+OnCalendar=*:00,05,10,15,20,25,30,35,40,45,50,55:*
+
+[Install]
+WantedBy=timers.target

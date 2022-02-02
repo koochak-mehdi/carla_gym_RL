@@ -12,7 +12,7 @@ LOGS=/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/logs/simulations
 VAR=/home/omen_ki_rechner/Documents/Mehdi/carla_gym_RL/vars/watchdog_var
 P_WATCHDOG_VAR=$(cat ${VAR})
 SCRIPT_SCREEN="script_screen"
-#echo ${script_output[0]}
+
 
 if [[ ${#script_output[@]} -eq 1 ]]
 then
@@ -22,15 +22,13 @@ then
         echo ${#my_list[@]} > ${VAR}
         if [[ ${P_WATCHDOG_VAR} -eq ${#my_list[@]} ]]
         then
-            sleep 30
+            sleep 1
             my_list=$( ls ${LOGS} )
             if [[ ${P_WATCHDOG_VAR} -eq ${#my_list[@]} ]]
             then
                 sudo systemctl stop script_check.service
-                ${SCREE<N} -S ${SCRIPT_SCREEN} -X quit
+                ${SCREEN} -S ${SCRIPT_SCREEN} -X quit
             fi
         fi
     fi
-else
-    echo "not running"
 fi

@@ -6,7 +6,7 @@ After=auto_git.service
 Unit=auto_git.service
 Persistent=true
 OnBootSec=120
-OnCalendar=*:30:00
+OnCalendar=*:00,30:*
 
 [Install]
 WantedBy=timers.target
