@@ -28,3 +28,42 @@
  rewrite tmp/ddpg/critic_ddpg.pth (92%)
  create mode 100644 vars/watchdog_var
 Fetching origin
+[ki ba9bd66] Automated commit from ki on 2022-02-02 16:47:54
+ 51 files changed, 9154 insertions(+), 14 deletions(-)
+ create mode 100644 logs/simulations/2022-02-02_14-31-56.log
+ create mode 100644 logs/simulations/2022-02-02_14-48-07.log
+ create mode 100644 logs/simulations/2022-02-02_14-49-05.log
+ create mode 100644 logs/simulations/2022-02-02_14-50-06.log
+ create mode 100644 logs/simulations/2022-02-02_14-51-15.log
+ create mode 100644 logs/simulations/2022-02-02_14-52-11.log
+ create mode 100644 logs/simulations/2022-02-02_14-53-02.log
+ create mode 100644 logs/simulations/2022-02-02_14-54-15.log
+ create mode 100644 logs/simulations/2022-02-02_14-55-05.log
+ create mode 100644 logs/simulations/2022-02-02_14-56-07.log
+ create mode 100644 logs/simulations/2022-02-02_14-57-17.log
+ create mode 100644 logs/simulations/2022-02-02_14-58-09.log
+ create mode 100644 logs/simulations/2022-02-02_15-00-43.log
+ create mode 100644 logs/simulations/2022-02-02_15-03-30.log
+ create mode 100644 logs/simulations/2022-02-02_15-04-15.log
+ create mode 100644 logs/simulations/2022-02-02_15-08-59.log
+ create mode 100644 logs/simulations/2022-02-02_15-09-51.log
+ create mode 100644 logs/simulations/2022-02-02_15-10-36.log
+ create mode 100644 logs/simulations/2022-02-02_15-11-32.log
+ create mode 100644 logs/simulations/2022-02-02_15-12-09.log
+ create mode 100644 logs/simulations/2022-02-02_15-13-07.log
+ create mode 100644 logs/simulations/2022-02-02_15-14-58.log
+ create mode 100644 logs/simulations/2022-02-02_15-15-52.log
+ create mode 100644 logs/simulations/2022-02-02_15-17-33.log
+ create mode 100644 logs/simulations/2022-02-02_15-18-03.log
+ create mode 100644 logs/simulations/2022-02-02_15-19-22.log
+ create mode 100644 logs/simulations/2022-02-02_15-20-15.log
+ create mode 100644 logs/simulations/2022-02-02_15-43-19.log
+ create mode 100644 logs/simulations/2022-02-02_15-44-09.log
+ create mode 100644 logs/simulations/2022-02-02_15-45-13.log
+ create mode 100644 logs/simulations/2022-02-02_15-46-37.log
+ create mode 100644 logs/simulations/2022-02-02_15-47-51.log
+ create mode 100644 scripts/watch_dog/my_watch_dog.service
+ create mode 100644 scripts/watch_dog/my_watch_dog.timer
+ rewrite tmp/carla-env-v0_ddpg_ac.png (97%)
+ rewrite tmp/ddpg/actor_ddpg.pth (92%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
