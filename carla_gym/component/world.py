@@ -261,8 +261,6 @@ class World(object):
             if sensor is not None:
                 sensor.stop()
                 sensor.destroy()
-        if self.player is not None:
-            self.player.destroy()
         
         if len(self.obs_sensors) != 0:
             for obs_sensor in self.obs_sensors:
@@ -270,5 +268,10 @@ class World(object):
                 obs_sensor = None
 
             self.obs_sensors = list()
+
+        if self.player is not None:
+            self.player.destroy()
+        
+        
 
         
