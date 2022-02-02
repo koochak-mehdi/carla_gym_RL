@@ -59,6 +59,9 @@ class CarlaEnv(gym.Env):
 
         self.last_x = None
         self.last_y = None
+
+        # develop your grid map in reset
+        # and rewrite this part of your code
         
 
     def step(self, action):
