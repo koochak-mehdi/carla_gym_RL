@@ -1,1 +1,27 @@
 Fetching origin
+[ki 20aed31] Automated commit from ki on 2022-02-02 18:30:06
+ 32 files changed, 7385 insertions(+), 5 deletions(-)
+ create mode 100644 logs/git_logs/2022-02-02-18-30-06.log
+ create mode 100644 logs/simulations/2022-02-02_17-01-32.log
+ create mode 100644 logs/simulations/2022-02-02_17-02-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-04-04.log
+ create mode 100644 logs/simulations/2022-02-02_17-05-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-06-19.log
+ create mode 100644 logs/simulations/2022-02-02_17-07-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-08-18.log
+ create mode 100644 logs/simulations/2022-02-02_17-09-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-13-48.log
+ create mode 100644 logs/simulations/2022-02-02_17-14-22.log
+ create mode 100644 logs/simulations/2022-02-02_17-15-07.log
+ create mode 100644 logs/simulations/2022-02-02_17-16-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-19-05.log
+ create mode 100644 logs/simulations/2022-02-02_17-20-35.log
+ create mode 100644 logs/simulations/2022-02-02_17-21-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-23-57.log
+ create mode 100644 logs/simulations/2022-02-02_17-25-26.log
+ create mode 100644 logs/simulations/2022-02-02_17-26-15.log
+ create mode 100644 logs/simulations/2022-02-02_17-27-59.log
+ create mode 100644 logs/simulations/2022-02-02_17-28-29.log
+ rewrite tmp/carla-env-v0_ddpg_ac.png (98%)
+ rewrite tmp/ddpg/actor_ddpg.pth (92%)
+ rewrite tmp/ddpg/critic_ddpg.pth (92%)
