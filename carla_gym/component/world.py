@@ -264,6 +264,7 @@ class World(object):
         
         if len(self.obs_sensors) != 0:
             for obs_sensor in self.obs_sensors:
+                obs_sensor.sensor.stop()
                 obs_sensor.sensor.destroy()
                 obs_sensor = None
 
